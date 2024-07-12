@@ -4,19 +4,19 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.Date;
 
 @Entity
 public class Delito {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
     private String tipo;
-    private String fechaHora;
-    private String ubicacion;
     private String descripcion;
-    // otros campos y métodos getter/setter
-    
+    private Date fecha;
+
+    // Getters and setters
     public Long getId() {
         return id;
     }
@@ -33,27 +33,19 @@ public class Delito {
         this.tipo = tipo;
     }
 
-    public String getFechaHora() {
-        return fechaHora;
-    }
-
-    public void setFechaHora(String fechaHora) {
-        this.fechaHora = fechaHora;
-    }
-
-    public String getUbicacion() {
-        return ubicacion;
-    }
-
-    public void setUbicacion(String ubicacion) {
-        this.ubicacion = ubicacion;
-    }
-
     public String getDescripcion() {
         return descripcion;
     }
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
     }
 }
